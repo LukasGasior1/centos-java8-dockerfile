@@ -10,5 +10,6 @@ RUN tar xf jdk-8u40-linux-x64.tar.gz -C /usr/java
 
 RUN yum remove -y wget tar
 
-CMD ["/bin/true"]
+ENV JAVA_HOME /usr/java/jdk1.8.0_40
+RUN alternatives --install /usr/bin/java java $JAVA_HOME/bin/java 1
 
